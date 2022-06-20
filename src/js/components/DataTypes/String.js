@@ -1,6 +1,7 @@
 import React from 'react';
 import DataTypeLabel from './DataTypeLabel';
 import { toType } from './../../helpers/util';
+import isUrl from 'is-url'
 
 //theme
 import Theme from './../../themes/getStyle';
@@ -21,7 +22,11 @@ export default class extends React.PureComponent {
         };
     }
 
-    toggleCollapsed = () => {
+    toggleCollapsed = (e) => {
+        if (!this.state.collapsed && isUrl(this.props.value)) {
+            return;
+        }
+
         this.setState(
             {
                 collapsed: !this.state.collapsed
@@ -56,6 +61,14 @@ export default class extends React.PureComponent {
                     </span>
                 );
             }
+        }
+
+        if (!this.state.collapsed && isUrl(value)) {
+            value = (
+                <a href={value} target="_blank" {...Theme(theme, 'hyperlink')}>
+                    {value}
+                </a>
+            );
         }
 
         return (

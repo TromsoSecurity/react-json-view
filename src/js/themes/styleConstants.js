@@ -91,5 +91,8 @@ export default {
     addKeyModalWidth: '200px',
     addKeyModalMargin: 'auto',
     addKeyModalPadding: '10px',
-    addKeyModalRadius: '3px'
+    addKeyModalRadius: '3px',
+
+    hyperlinkOpacity: '0.85',
+    hyperlinkOpacityHover: '1',
 };

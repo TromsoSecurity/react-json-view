@@ -47,7 +47,8 @@ const colorMap = theme => ({
         background: theme.base09,
         iconColor: theme.base01,
         fontColor: theme.base01
-    }
+    },
+    hyperlink: theme.base0F
 });
 
 const getDefaultThemeStyling = theme => {
@@ -189,6 +190,14 @@ const getDefaultThemeStyling = theme => {
         string: {
             display: 'inline-block',
             color: colors.dataTypes.string
+        },
+        hyperlink: {
+            color: colors.hyperlink,
+            opacity: constants.hyperlinkOpacity,
+            ':hover': {
+                color: 'black',
+                opacity: constants.hyperlinkOpacityHover
+            }
         },
         nan: {
             display: 'inline-block',
