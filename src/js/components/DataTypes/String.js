@@ -23,7 +23,7 @@ export default class extends React.PureComponent {
     }
 
     toggleCollapsed = (e) => {
-        if (!this.state.collapsed && isUrl(this.props.value)) {
+        if (isUrl(this.props.value)) {
             return;
         }
 
@@ -63,7 +63,7 @@ export default class extends React.PureComponent {
             }
         }
 
-        if (!this.state.collapsed && isUrl(value)) {
+        if (isUrl(value)) {
             value = (
                 <a href={value} target="_blank" {...Theme(theme, 'hyperlink')}>
                     {value}
